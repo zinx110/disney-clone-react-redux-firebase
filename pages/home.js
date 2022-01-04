@@ -13,7 +13,7 @@ import db from "../utils/firebase";
 import { setMovies } from "../reduxFeatures/movie/movieSlice";
 import { selectUserName } from "../reduxFeatures/user/userSlice";
 
-const home = (props) => {
+const Home = (props) => {
   const dispatch = useDispatch();
   const userName = useSelector(selectUserName);
   let recommends = [];
@@ -64,4 +64,4 @@ const home = (props) => {
   );
 };
 
-export default home;
+export default Home;

@@ -6,6 +6,11 @@
   top: 72px;
   padding: 0 calc(3.5vw + 5px);
 }
+.backgroundImg {
+  width: 100vw;
+  min-height: 100vh;
+  object-fit: contain;
+}
 
 .background {
   left: 0px;
@@ -14,11 +19,6 @@
   right: 0px;
   top: 0px;
   z-index: -1;
-}
-
-.backgroundImg {
-  width: 100vw;
-  height: 200vh;
 }
 
 .imageTitle {

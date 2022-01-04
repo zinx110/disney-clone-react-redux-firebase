@@ -2,6 +2,7 @@ import styles from "./Navbar.module.css";
 import { FaBars } from "react-icons/fa";
 import { auth, provider } from "../utils/firebase";
 import { useSelector, useDispatch } from "react-redux";
+import Link from "next/link";
 
 import { useRouter } from "next/router";
 import {
@@ -63,44 +64,60 @@ const Navbar = () => {
   return (
     <nav className={styles.nav}>
       <FaBars className={styles.bars} />
-      <a className={styles.logo_container}>
-        <img
-          className={styles.logo}
-          src="/assets/images/logo.svg"
-          alt="Disney+"
-        />
-      </a>
+      <Link href="/home">
+        <div className={styles.logo_container}>
+          <img
+            className={styles.logo}
+            src="/assets/images/logo.svg"
+            alt="Disney+"
+          />
+        </div>
+      </Link>
       {!userName ? (
-        <a className={styles.login} onClick={handleAuth}>
+        <div className={styles.login} onClick={handleAuth}>
           Login
-        </a>
+        </div>
       ) : (
         <>
           <div className={styles.navMenu}>
-            <a className={styles.menu_links} href="/home">
-              <img src="/assets/images/home-icon.svg" alt="HOME" />
-              <span className={styles.span}>HOME</span>
-            </a>
-            <a className={styles.menu_links}>
-              <img src="/assets/images/search-icon.svg" alt="SEARCH" />
-              <span className={styles.span}>SEARCH</span>
-            </a>
-            <a className={styles.menu_links}>
-              <img src="/assets/images/watchlist-icon.svg" alt="WATCHLIST" />
-              <span className={styles.span}>WATCHLIST</span>
-            </a>
-            <a className={styles.menu_links}>
-              <img src="/assets/images/original-icon.svg" alt="ORIGINALS" />
-              <span className={styles.span}>ORIGINALS</span>
-            </a>
-            <a className={styles.menu_links}>
-              <img src="/assets/images/movie-icon.svg" alt="MOVIE" />
-              <span className={styles.span}>MOVIE</span>
-            </a>
-            <a className={styles.menu_links}>
-              <img src="/assets/images/series-icon.svg" alt="SERIES" />
-              <span className={styles.span}>SERIES</span>
-            </a>
+            <Link href="/home">
+              <div className={styles.menu_links}>
+                <div>
+                  <img src="/assets/images/home-icon.svg" alt="HOME" />
+                  <span className={styles.span}>HOME</span>
+                </div>
+              </div>
+            </Link>
+            <div className={styles.menu_links}>
+              <div>
+                <img src="/assets/images/search-icon.svg" alt="SEARCH" />
+                <span className={styles.span}>SEARCH</span>
+              </div>
+            </div>
+            <div className={styles.menu_links}>
+              <div>
+                <img src="/assets/images/watchlist-icon.svg" alt="WATCHLIST" />
+                <span className={styles.span}>WATCHLIST</span>
+              </div>
+            </div>
+            <div className={styles.menu_links}>
+              <div>
+                <img src="/assets/images/original-icon.svg" alt="ORIGINALS" />
+                <span className={styles.span}>ORIGINALS</span>
+              </div>
+            </div>
+            <div className={styles.menu_links}>
+              <div>
+                <img src="/assets/images/movie-icon.svg" alt="MOVIE" />
+                <span className={styles.span}>MOVIE</span>
+              </div>
+            </div>
+            <div className={styles.menu_links}>
+              <div>
+                <img src="/assets/images/series-icon.svg" alt="SERIES" />
+                <span className={styles.span}>SERIES</span>
+              </div>
+            </div>
           </div>
           <div className={styles.signOut}>
             <img className={styles.userImage} src={userPhoto} alt={userName} />
