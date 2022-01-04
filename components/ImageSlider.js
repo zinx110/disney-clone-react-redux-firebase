@@ -1,7 +1,4 @@
-import styles from "./ImageSlider.module.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import { Carousel, Wrap } from "./ImageSlider.module";
 
 const ImageSlider = () => {
   let settings = {
@@ -14,32 +11,30 @@ const ImageSlider = () => {
     autoplay: true,
   };
 
-  console.log(Slider);
-
   return (
-    <Slider className={styles.carousel} {...settings}>
-      <div className={styles.wrap}>
-        <a>
+    <Carousel {...settings}>
+      <Wrap>
+        <div>
           <img src="/assets/images/slider-badging.jpg" alt="slider1" />
-        </a>
-      </div>
-      <div className={styles.wrap}>
-        <a>
+        </div>
+      </Wrap>
+      <Wrap>
+        <div>
           <img src="/assets/images/slider-scale.jpg" alt="slider2" />
-        </a>
-      </div>
+        </div>
+      </Wrap>
 
-      <div className={styles.wrap}>
-        <a>
+      <Wrap>
+        <div>
           <img src="/assets/images/slider-badag.jpg" alt="slider3" />
-        </a>
-      </div>
-      <div className={styles.wrap}>
-        <a>
+        </div>
+      </Wrap>
+      <Wrap>
+        <div>
           <img src="/assets/images/slider-scales.jpg" alt="slider4" />
-        </a>
-      </div>
-    </Slider>
+        </div>
+      </Wrap>
+    </Carousel>
   );
 };
 
