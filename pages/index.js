@@ -3,8 +3,6 @@ import Image from "next/image";
 
 import Login from "../components/Login";
 
-// https://image.tmdb.org/t/p/w500/wwemzKWzjKYJFfCeiB57q3r4Bcm.png
-
 export default function Home() {
   return (
     <div>
