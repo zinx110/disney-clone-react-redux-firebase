@@ -6,35 +6,31 @@ import Slider from "react-slick";
 export const Carousel = styled(Slider)`
   margin-top: 20px;
 
-  button {
+  & > button {
     opacity: 0;
     height: 100%;
     width: 5vw;
 
     z-index: 1;
+    &:hover {
+      opacity: 1;
+      transition: opacity 0.2s ease 0s;
+    }
   }
 
   ul li button {
-    button {
-      opacity: 0;
-      height: 100%;
-      width: 5vw;
-
-      z-index: 1;
-    }
-
     &:before {
       font-size: 10px;
       color: rgb(150, 158, 171);
 
       &:hover {
-        opacity: 1;
+        color: rgb(249, 249, 249);
         transition: opacity 0.2s ease 0s;
       }
     }
   }
 
-  li.slick-active button:before {
+  li.slick-active button::before {
     color: white;
   }
 
